@@ -1,15 +1,23 @@
-pipeline {
-    agent {
-      label 'slave'
-    }
-    stages {
-        stage('Hello') {
-            steps {
-                sh 'java -version'
-                echo 'Get working Directory'
-                sh 'pwd'
-            }
+node{
+	stage('SCM Checkout'){
+	git credentialsId: 'git-credential', url: 'https://github.com/kdyohan/Sample-Test-Repo.git'
+	}
+	stage('Build Production'){
+	    sh 'cd hello-world \n npm install \n ng build --prod'
+	}
+	stage('Build Docker Image'){
+	    sh "cd hello-world \n docker build -t kdyohan/hello-world-version-${BUILD_NUMBER} ."
+	}
+	stage('Publish Docker Image'){
+	    
+	    withCredentials([string(credentialsId: 'dockerPWD', variable: 'dockerHubPWD')]) {
+            sh "docker login -u kdyohan -p ${dockerHubPWD}"
         }
-        
-    }
+	    sh "cd hello-world \n docker push kdyohan/hello-world-version-${BUILD_NUMBER}"
+	    
+	}
+	
+	stage('Run Docker Image'){
+	    sh "docker run -d -p 8050:80 kdyohan/hello-world-version-${BUILD_NUMBER}"
+	}
 }
