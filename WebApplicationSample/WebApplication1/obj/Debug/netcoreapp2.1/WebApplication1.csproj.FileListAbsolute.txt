@@ -7,7 +7,6 @@ D:\Sample Test Repo\WebApplicationSample\WebApplication1\bin\Debug\netcoreapp2.1
 D:\Sample Test Repo\WebApplicationSample\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.pdb
 D:\Sample Test Repo\WebApplicationSample\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.dll
 D:\Sample Test Repo\WebApplicationSample\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.pdb
-D:\Sample Test Repo\WebApplicationSample\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.AssemblyReference.cache
 D:\Sample Test Repo\WebApplicationSample\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfoInputs.cache
 D:\Sample Test Repo\WebApplicationSample\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfo.cs
 D:\Sample Test Repo\WebApplicationSample\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CoreCompileInputs.cache
